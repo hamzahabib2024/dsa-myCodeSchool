@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node* next;
+};
+
+Node* insert(Node* head,int data)
+{
+    Node* temp = new Node();
+    temp->next = nullptr;
+    temp->data = data;
+    if (head==nullptr)
+    {
+        head = temp;
+    }
+    else
+    {
+        temp->next = head;
+        head = temp;
+    }
+    return head;
+}
+
+void print(Node* head)
+{
+    while(head!=nullptr)
+    {
+        cout<<head->data<<" ";
+        head = head->next;
+    }
+}
+
+
+int main()
+{
+    Node* head = nullptr; //empty list
+
+    int n,i,x;
+
+    cout<<"enter the number of elements that will be present in the linked list"<<endl;
+    cin>>n;
+
+    for(i=0;i<n;i++)
+    {
+        cout<<"\nEnter the element ie number: "<<endl;
+        cin>>x;
+        cout<<"\n"<<x<<endl;
+        head = insert(head,x);
+        print(head);
+    }
+
+
+}
