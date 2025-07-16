@@ -7,21 +7,21 @@ struct Node
     Node* next;
 };
 
-Node* insert(Node* head,int data)
+Node* insert(Node** head,int data)
 {
     Node* temp = new Node();
     temp->next = nullptr;
     temp->data = data;
-    if (head==nullptr)
+    if (*head==nullptr)
     {
-        head = temp;
+        *head = temp;
     }
     else
     {
-        temp->next = head;
-        head = temp;
+        temp->next = *head;
+        *head = temp;
     }
-    return head;
+    return *head;
 }
 
 void print(Node* head)
@@ -48,7 +48,7 @@ int main()
         cout<<"\nEnter the element ie number: "<<endl;
         cin>>x;
         cout<<"\n"<<x<<endl;
-        head = insert(head,x);
+        insert(&head,x);
         print(head);
     }
 
