@@ -7,7 +7,8 @@ struct Node
     Node* next;
 };
 
-Node* insert(Node** head,int data)
+Node* insert(Node** head,int data)   // here the **node means the address of the pointer head
+                                    // and *head is the address stored in the pointer head
 {
     Node* temp = new Node();
     temp->next = nullptr;
@@ -40,7 +41,7 @@ int main()
 
     int n,i,x;
 
-    cout<<"enter the number of elements that will be present in the linked list"<<endl;
+    cout<<"enter number of elements that will be present in the linked list"<<endl;
     cin>>n;
 
     for(i=0;i<n;i++)
