@@ -67,4 +67,3 @@ int main()
     head = Reverse(head);
     print(head);
 }
-
