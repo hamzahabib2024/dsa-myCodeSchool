@@ -59,5 +59,5 @@ int main()
     Pop(); Print();
 
     int top = Top();
-    cout<<top;
+    cout<<"Top: "<<top;
 }
